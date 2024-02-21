@@ -4,8 +4,9 @@ using UnityEngine.Tilemaps;
 
 public class TileSelector : MonoBehaviour {
     /* -------------------------------- Variables ------------------------------- */
-    public static Vector2Int GRID_POSITION;
-    public static Vector2Int PREVIOUS_GRID_POSITION;
+    public static Vector2Int GRID_POS;
+    public static Vector2Int PREVIOUS_GRID_POS;
+    public static Vector2Int SELECTED_POS;
     public static Tilemap ACTIVE_TILEMAP;
     
     public Grid tileGrid;
@@ -23,7 +24,11 @@ public class TileSelector : MonoBehaviour {
         // Update methods
         UpdateGridPosition();
         UpdateActiveTilemap();
-        UpdateDirtSelector();
+
+        // Select
+        if (Input.GetMouseButtonDown(0)) {
+            SelectGridPosition();
+        }
     }
 
     // Update cell position
@@ -31,9 +36,9 @@ public class TileSelector : MonoBehaviour {
         Vector2Int position = LocationOnGrid();
 
         // Chenage GRID_POSITION if it changed
-        if (position != PREVIOUS_GRID_POSITION) {
-            GRID_POSITION = position;
-            PREVIOUS_GRID_POSITION = GRID_POSITION;
+        if (position != PREVIOUS_GRID_POS) {
+            GRID_POS = position;
+            PREVIOUS_GRID_POS = GRID_POS;
 
             //Debug.Log("GRID: " + GRID_POSITION);
         }
@@ -43,7 +48,7 @@ public class TileSelector : MonoBehaviour {
     void UpdateActiveTilemap() {
         Tilemap[] tilemaps = tileGrid.GetComponentsInChildren<Tilemap>();
         foreach (Tilemap tilemap in tilemaps) {
-            if (tilemap.GetTile(new Vector3Int(GRID_POSITION.x, GRID_POSITION.y, 0)) != null) {
+            if (tilemap.GetTile(new Vector3Int(GRID_POS.x, GRID_POS.y, 0)) != null) {
                 ACTIVE_TILEMAP = tilemap;
                 return;
             }
@@ -52,13 +57,17 @@ public class TileSelector : MonoBehaviour {
     }
     
     // Update the dirt selector
-    void UpdateDirtSelector() {
-        // Detect if its the right timemap
+    void SelectGridPosition() {
+        // Remove old selector
+        selectorTilemap.SetTile(new Vector3Int(SELECTED_POS.x, SELECTED_POS.y, 1), null);
+
+        // Place selector (dirt)
         if (IsCorrectTilemap(dirtTilemap)) {
-            // Place slectorTile on selectorTilemap at GRID_POSITION
-            selectorTilemap.SetTile(new Vector3Int(GRID_POSITION.x, GRID_POSITION.y, 1), slectorTile);
-            Debug.Log("Placed selector");
+            selectorTilemap.SetTile(new Vector3Int(GRID_POS.x, GRID_POS.y, 1), slectorTile);
         }
+
+        // Update SELECTED_GRID_POSITION
+        SELECTED_POS = GRID_POS;
     }
 
     // Method that checks if ACTIVE_TILEMAP is a specific tilemap

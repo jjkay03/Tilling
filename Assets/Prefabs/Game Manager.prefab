@@ -57,8 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06e29875e78aa04b885ba701b6ef1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileGrid: {fileID: 6867069168534507657, guid: a869819852573ba4da889751df3ae0a2, type: 3}
+  tileGrid: {fileID: 0}
   selectorTilemap: {fileID: 6721592116290940128, guid: b93a22b6f5287b64880591a57be0a641, type: 3}
-  plantsTilemap: {fileID: 4517424537617276803, guid: 29744332b96bb364bbaffe9bf59020b9, type: 3}
-  dirtTilemap: {fileID: 3311196659700585058, guid: e535b94a9fc531d4896fc8f0beed2cc6, type: 3}
+  plantsTilemap: {fileID: 0}
+  dirtTilemap: {fileID: 0}
   slectorTile: {fileID: 11400000, guid: dd1273be1d8139b43982514ee427e7ae, type: 2}
