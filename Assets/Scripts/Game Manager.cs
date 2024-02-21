@@ -1,34 +1,25 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class PlantableTilemapDetector : MonoBehaviour {
+public class PlantableTilemapDetector : MonoBehaviour
+{
     /* -------------------------------- Variables ------------------------------- */
-    public Grid grid;
-    public Tilemap plantableTilemap;
+    public Grid tileGrid;
+
 
     /* --------------------------------- Methods -------------------------------- */
     void Update() {
-        DetectMouseOverPlantable();
+        LocationOnGrid();
     }
 
-    void DetectCursorCell() {
+    void LocationOnGrid() {
         // Get the mouse position in world coordinates
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Convert the world position to cell coordinates on the grid
-        Vector3Int cellPosition = grid.WorldToCell(mouseWorldPos);
-    }
+        // Convert the world coordinates to cell coordinates on the grid
+        Vector3Int cellPosition = tileGrid.WorldToCell(mousePosition);
 
-    void DetectMouseOverPlantable() {
-        // Get the mouse position in world coordinates
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Cast a ray to detect if the mouse is over a Collider2D with the "Plantable" tag
-        RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-
-        // Check if the hit object has the "Plantable" tag
-        if (hit.collider != null && hit.collider.CompareTag("Plantable")) {
-            Debug.Log("Mouse is over a plantable object!");
-        }
+        // Output the cell position
+        Debug.Log("Cell Position: " + cellPosition);
     }
 }

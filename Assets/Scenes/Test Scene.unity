@@ -215,6 +215,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!156049354 &1454612857 stripped
+Grid:
+  m_CorrespondingSourceObject: {fileID: 6867069168534507657, guid: a869819852573ba4da889751df3ae0a2, type: 3}
+  m_PrefabInstance: {fileID: 1495671803915863300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1495671803915863300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,7 +273,8 @@ PrefabInstance:
       value: Grid
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4479965787516664602, guid: a869819852573ba4da889751df3ae0a2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a869819852573ba4da889751df3ae0a2, type: 3}
@@ -285,9 +291,13 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 8430115613712618220, guid: 19c5f2ce4f8e70242822f6c5323df37a, type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 1454612857}
+    - target: {fileID: 8430115613712618220, guid: 19c5f2ce4f8e70242822f6c5323df37a, type: 3}
       propertyPath: plantableTilemap
       value: 
-      objectReference: {fileID: 3823191587965621142, guid: e535b94a9fc531d4896fc8f0beed2cc6, type: 3}
+      objectReference: {fileID: 3311196659700585058, guid: e535b94a9fc531d4896fc8f0beed2cc6, type: 3}
     - target: {fileID: 8656158056777168590, guid: 19c5f2ce4f8e70242822f6c5323df37a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15169197
