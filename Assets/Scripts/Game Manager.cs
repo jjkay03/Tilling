@@ -1,25 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-public class PlantableTilemapDetector : MonoBehaviour
+public class GameManagert : MonoBehaviour
 {
-    /* -------------------------------- Variables ------------------------------- */
-    public Grid tileGrid;
-
-
-    /* --------------------------------- Methods -------------------------------- */
-    void Update() {
-        LocationOnGrid();
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
-    void LocationOnGrid() {
-        // Get the mouse position in world coordinates
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Convert the world coordinates to cell coordinates on the grid
-        Vector3Int cellPosition = tileGrid.WorldToCell(mousePosition);
-
-        // Output the cell position
-        Debug.Log("Cell Position: " + cellPosition);
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
