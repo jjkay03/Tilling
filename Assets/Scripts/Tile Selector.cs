@@ -9,9 +9,8 @@ public class TileSelector : MonoBehaviour {
     public static Vector2Int SELECTED_POS;
     public static Tilemap ACTIVE_TILEMAP;
     
-    public Grid tileGrid;
     [Header("Tilemaps")]
-    public Tilemap selectorTilemap;
+    public Grid tileGrid;
     public Tilemap plantsTilemap;
     public Tilemap dirtTilemap;
     [Header("Tiles")]
@@ -59,11 +58,11 @@ public class TileSelector : MonoBehaviour {
     // Update the dirt selector
     void SelectGridPosition() {
         // Remove old selector
-        selectorTilemap.SetTile(new Vector3Int(SELECTED_POS.x, SELECTED_POS.y, 1), null);
+        dirtTilemap.SetTile(new Vector3Int(SELECTED_POS.x, SELECTED_POS.y, 1), null);
 
         // Place selector (dirt)
         if (IsCorrectTilemap(dirtTilemap)) {
-            selectorTilemap.SetTile(new Vector3Int(GRID_POS.x, GRID_POS.y, 1), slectorTile);
+            dirtTilemap.SetTile(new Vector3Int(GRID_POS.x, GRID_POS.y, 1), slectorTile);
         }
 
         // Update SELECTED_GRID_POSITION
