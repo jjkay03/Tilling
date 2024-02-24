@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8656158056777168590}
   - component: {fileID: 4722630891729496305}
   - component: {fileID: 8430115613712618220}
+  - component: {fileID: 781166619215510172}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -57,8 +58,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06e29875e78aa04b885ba701b6ef1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileGrid: {fileID: 0}
-  selectorTilemap: {fileID: 6721592116290940128, guid: b93a22b6f5287b64880591a57be0a641, type: 3}
-  plantsTilemap: {fileID: 0}
-  dirtTilemap: {fileID: 0}
+  tileGrid: {fileID: 6867069168534507657, guid: a869819852573ba4da889751df3ae0a2, type: 3}
+  plantsTilemap: {fileID: 4517424537617276803, guid: 29744332b96bb364bbaffe9bf59020b9, type: 3}
+  dirtTilemap: {fileID: 3311196659700585058, guid: e535b94a9fc531d4896fc8f0beed2cc6, type: 3}
   slectorTile: {fileID: 11400000, guid: dd1273be1d8139b43982514ee427e7ae, type: 2}
+--- !u!114 &781166619215510172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121938079374126697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b705d04e82c2b164596c6841995c47c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

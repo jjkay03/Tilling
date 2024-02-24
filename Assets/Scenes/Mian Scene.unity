@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1839735485 &863006364 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 5073294388059898963, guid: a869819852573ba4da889751df3ae0a2, type: 3}
+  m_PrefabInstance: {fileID: 1495671803915863300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1839735485 &1330310839 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 4691959988306997433, guid: a869819852573ba4da889751df3ae0a2, type: 3}
+  m_PrefabInstance: {fileID: 1495671803915863300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!156049354 &1454612857 stripped
 Grid:
   m_CorrespondingSourceObject: {fileID: 6867069168534507657, guid: a869819852573ba4da889751df3ae0a2, type: 3}
@@ -402,6 +412,18 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 1454612857}
+    - target: {fileID: 8430115613712618220, guid: 19c5f2ce4f8e70242822f6c5323df37a, type: 3}
+      propertyPath: tileGrid
+      value: 
+      objectReference: {fileID: 1454612857}
+    - target: {fileID: 8430115613712618220, guid: 19c5f2ce4f8e70242822f6c5323df37a, type: 3}
+      propertyPath: dirtTilemap
+      value: 
+      objectReference: {fileID: 1330310839}
+    - target: {fileID: 8430115613712618220, guid: 19c5f2ce4f8e70242822f6c5323df37a, type: 3}
+      propertyPath: plantsTilemap
+      value: 
+      objectReference: {fileID: 863006364}
     - target: {fileID: 8430115613712618220, guid: 19c5f2ce4f8e70242822f6c5323df37a, type: 3}
       propertyPath: plantableTilemap
       value: 
