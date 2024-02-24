@@ -18,6 +18,7 @@ public class DebugCommandBase {
     }
 }
 
+// Command no argument
 public class DebugCommand : DebugCommandBase {
 
     public Action command;
@@ -28,5 +29,19 @@ public class DebugCommand : DebugCommandBase {
 
     public void Invoke() {
         command.Invoke();
+    }
+}
+
+// Command with 1 argument
+public class DebugCommand<T1> : DebugCommandBase {
+
+    public Action<T1> command;
+
+    public DebugCommand(string id, string description, string format, Action<T1> command) : base (id, description, format) {
+        this.command = command;
+    }
+
+    public void Invoke(T1 value) {
+        command.Invoke(value);
     }
 }
