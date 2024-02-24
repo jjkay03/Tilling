@@ -1,10 +1,11 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DebugController : MonoBehaviour {
     /* -------------------------------- Variables ------------------------------- */
+    public bool allowDebugConsole = false;
+    
     bool showConsole;
     bool showHelp;
     string input;
@@ -19,7 +20,7 @@ public class DebugController : MonoBehaviour {
     /* --------------------------------- Methods -------------------------------- */
     void Update() {
         // Check if the backtick (`) key is pressed
-        if (Input.GetKeyDown(KeyCode.BackQuote)) { OnToggleDebug(); }
+        if (Input.GetKeyDown(KeyCode.BackQuote) && allowDebugConsole) { OnToggleDebug(); }
 
         // Check if return (enter) key is pressed
         if (Input.GetKeyDown(KeyCode.Return)) { OnReturn(); }
