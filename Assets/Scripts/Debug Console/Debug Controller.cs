@@ -9,13 +9,18 @@ public class DebugController : MonoBehaviour {
     bool showConsole;
     bool showHelp;
     string input;
+    string commandPrefix = "[COMMAND] ";
     Vector2 scroll;
 
     public static DebugCommand HELP;
     public static DebugCommand TEST;
-    public static DebugCommand<int> TEST2;
+    public static DebugCommand COARDS;
+    public static DebugCommand<int> SETGOLD;
     
     public List<object> commandList;
+
+    private GameManager gameManager;
+    private TileSelector tileSelector;
 
     /* --------------------------------- Methods -------------------------------- */
     void Update() {
@@ -24,27 +29,39 @@ public class DebugController : MonoBehaviour {
 
         // Check if return (enter) key is pressed
         if (Input.GetKeyDown(KeyCode.Return)) { OnReturn(); }
+
+        // Get componments
+        gameManager = GetComponent<GameManager>();
+        tileSelector = GetComponent<TileSelector>();
     }
     
     private void Awake() {
         // Comands
         HELP = new DebugCommand("help", "Show a list of commands", "help", () => {
-            Debug.Log("[COMMAND] HELP");
-            showHelp = true;
+            Debug.Log($"{commandPrefix}help");
+            showHelp = !showHelp;
         });
+
         TEST = new DebugCommand("test", "Test command", "test", () => {
-            Debug.Log("[COMMAND] TEST");
+            Debug.Log($"{commandPrefix}test");
         });
-        TEST2 = new DebugCommand<int>("test2", "Test command with argument", "test2 <int>", (x) => {
-            Debug.Log("[COMMAND] TEST2: " + x);
+
+        COARDS = new DebugCommand("coards", "Displays selected coards", "coards", () => {
+            Debug.Log($"{commandPrefix}coards");
+            if (tileSelector!=null) { tileSelector.ToggleShowCoards(); }
         });
-        
+
+        SETGOLD = new DebugCommand<int>("setgold", "Set the amount of gold", "setgold <gold amount>", (x) => {
+            Debug.Log($"{commandPrefix}setgold: " + x);
+            GameManager.GOLD = x;
+        });
 
         // Update comamnd list
         commandList = new List<object> {
             HELP,
             TEST,
-            TEST2
+            COARDS,
+            SETGOLD
         };
     }
 
@@ -57,12 +74,12 @@ public class DebugController : MonoBehaviour {
 
     public void OnToggleDebug() {
         showConsole = !showConsole;
-        //if (showConsole) { Debug.Log("TOGGLED CONSOLE"); }
+        showHelp = false;
     }
 
     private void OnGUI() {
-        float consoleY = 20f;
-
+        float consoleY = 15f;
+        
         // Remove GUI if showConsole is false
         if (!showConsole) { return; }
 

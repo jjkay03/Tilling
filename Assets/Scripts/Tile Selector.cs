@@ -1,21 +1,23 @@
 using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 public class TileSelector : MonoBehaviour {
     /* -------------------------------- Variables ------------------------------- */
-    public static Vector2Int GRID_POS;
-    public static Vector2Int PREVIOUS_GRID_POS;
-    public static Vector2Int SELECTED_POS;
-    public static Tilemap ACTIVE_TILEMAP;
-    
     [Header("Tilemaps")]
     public Grid tileGrid;
     public Tilemap plantsTilemap;
     public Tilemap dirtTilemap;
     [Header("Tiles")]
     public Tile slectorTile;
+    [Header("Text")]
+    [SerializeField] TextMeshProUGUI coardsText;
 
+    public static Vector2Int GRID_POS;
+    public static Vector2Int PREVIOUS_GRID_POS;
+    public static Vector2Int SELECTED_POS;
+    public static Tilemap ACTIVE_TILEMAP;
 
     /* --------------------------------- Methods -------------------------------- */
     // Update
@@ -28,6 +30,10 @@ public class TileSelector : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             SelectGridPosition();
         }
+    }
+
+    public void ToggleShowCoards() {
+        coardsText.enabled = !coardsText.enabled; 
     }
 
     // Update cell position
@@ -67,6 +73,9 @@ public class TileSelector : MonoBehaviour {
 
         // Update SELECTED_GRID_POSITION
         SELECTED_POS = GRID_POS;
+
+        // Update coards text
+        coardsText.text = GRID_POS.ToString();
     }
 
     // Method that checks if ACTIVE_TILEMAP is a specific tilemap

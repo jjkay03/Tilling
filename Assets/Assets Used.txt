@@ -1,0 +1,15 @@
+# ---------------------------------------------------------------------------- #
+#       List of all the public assets that have been used in this project      #
+# ---------------------------------------------------------------------------- #
+
+
+# --------------------------------- Pixel Art -------------------------------- #
+
+Tiny Wonder Farm Asset Pack - By Butter Milk
+https://butterymilk.itch.io/tiny-wonder-farm-asset-pack
+
+
+# ----------------------------------- Font ----------------------------------- #
+
+Retro Pixel Font - By TalkWolf
+https://github.com/TakWolf/retro-pixel-font
