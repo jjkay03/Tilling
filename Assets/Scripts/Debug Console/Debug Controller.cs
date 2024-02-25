@@ -15,6 +15,7 @@ public class DebugController : MonoBehaviour {
     public static DebugCommand HELP;
     public static DebugCommand TEST;
     public static DebugCommand COARDS;
+    public static DebugCommand PLANT;
     public static DebugCommand<int> SETGOLD;
     
     public List<object> commandList;
@@ -23,18 +24,23 @@ public class DebugController : MonoBehaviour {
     private TileSelector tileSelector;
 
     /* --------------------------------- Methods -------------------------------- */
+    // START    
+    void Start() {
+        // Get componments
+        gameManager = GetComponent<GameManager>();
+        tileSelector = GetComponent<TileSelector>();
+    }
+
+    // UPDATE
     void Update() {
         // Check if the backtick (`) key is pressed
         if (Input.GetKeyDown(KeyCode.BackQuote) && allowDebugConsole) { OnToggleDebug(); }
 
         // Check if return (enter) key is pressed
         if (Input.GetKeyDown(KeyCode.Return)) { OnReturn(); }
-
-        // Get componments
-        gameManager = GetComponent<GameManager>();
-        tileSelector = GetComponent<TileSelector>();
     }
     
+    // AWAKE
     private void Awake() {
         // Comands
         HELP = new DebugCommand("help", "Show a list of commands", "help", () => {

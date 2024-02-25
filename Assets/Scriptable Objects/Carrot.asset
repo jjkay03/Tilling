@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c4dd3634255ae4f9b34c8cbb94b3db, type: 3}
+  m_Name: Carrot
+  m_EditorClassIdentifier: 
+  name: Carrot
+  description: Carrots can be left in the ground over the winter.
+  timeInStage0: 5
+  timeInStage1: 5
+  timeInStage2: 5
+  timeInStage3: 5
+  waterDelay: 0
+  sellPrice: 100
+  plantedCoards: {x: 0, y: 0}
+  plantedTime: 0
+  lastWaterTime: 0
+  isCollectable: 0
+  tileStage0: {fileID: 11400000, guid: 1d1c0cb1e4a6aee4cb33fe023718a622, type: 2}
+  tileStage1: {fileID: 11400000, guid: f106e3a89918f1e409a4358c2db8fb91, type: 2}
+  tileStage2: {fileID: 11400000, guid: b4885c50f44bb9b4cb61456451810858, type: 2}
+  tileStage3: {fileID: 11400000, guid: 5ccb2373dc635d64e981023eb9ade462, type: 2}
+  tileStage4: {fileID: 11400000, guid: 3102745371c81f240bded5623b98d9fa, type: 2}

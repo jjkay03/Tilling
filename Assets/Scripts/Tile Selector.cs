@@ -20,7 +20,7 @@ public class TileSelector : MonoBehaviour {
     public static Tilemap ACTIVE_TILEMAP;
 
     /* --------------------------------- Methods -------------------------------- */
-    // Update
+    // UPDATE
     void Update() {
         // Update methods
         UpdateGridPosition();
@@ -79,7 +79,7 @@ public class TileSelector : MonoBehaviour {
     }
 
     // Method that checks if ACTIVE_TILEMAP is a specific tilemap
-    bool IsCorrectTilemap(Tilemap tilemap) {
+    public bool IsCorrectTilemap(Tilemap tilemap) {
         return ACTIVE_TILEMAP != null && ACTIVE_TILEMAP.name == tilemap.name;
     }
 

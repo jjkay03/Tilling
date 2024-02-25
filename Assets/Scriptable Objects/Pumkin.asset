@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c4dd3634255ae4f9b34c8cbb94b3db, type: 3}
+  m_Name: Pumkin
+  m_EditorClassIdentifier: 
+  name: Pumkin
+  description: Pumpkins are 90% water. And yes, they can float.
+  timeInStage0: 5
+  timeInStage1: 5
+  timeInStage2: 5
+  timeInStage3: 5
+  waterDelay: 20
+  sellPrice: 100
+  plantedCoards: {x: 0, y: 0}
+  plantedTime: 0
+  lastWaterTime: 0
+  isCollectable: 0
+  tileStage0: {fileID: 11400000, guid: fbf16773131a3b140baa3e980e6aad17, type: 2}
+  tileStage1: {fileID: 11400000, guid: 070f1baa5fc9a734697aee4d47fb1a89, type: 2}
+  tileStage2: {fileID: 11400000, guid: b61821a1bd25e1045b86472d7713f2e5, type: 2}
+  tileStage3: {fileID: 11400000, guid: b799855fc5c9b7b46b98beaa9b963b7f, type: 2}
+  tileStage4: {fileID: 11400000, guid: 9c819e17e7c80d04386f64074d310e6e, type: 2}

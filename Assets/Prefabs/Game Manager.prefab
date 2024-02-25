@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8656158056777168590}
   - component: {fileID: 4722630891729496305}
+  - component: {fileID: 3830985475675778655}
   - component: {fileID: 8430115613712618220}
   - component: {fileID: 781166619215510172}
   m_Layer: 0
@@ -46,6 +47,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46118fddfbfef5946888069338b91269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3830985475675778655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121938079374126697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caeb74d4b1cde954db0cb558d53a0878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantsParent: {fileID: 0}
+  PLANT_PUMKIN: {fileID: 11400000, guid: f113c8428c43ddb4ea575c004a883e23, type: 2}
+  PLANT_CARROT: {fileID: 11400000, guid: 102bc3ca5ec1d184e9cc5d6c01d6621e, type: 2}
 --- !u!114 &8430115613712618220
 MonoBehaviour:
   m_ObjectHideFlags: 0
