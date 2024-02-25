@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c4dd3634255ae4f9b34c8cbb94b3db, type: 3}
   m_Name: Pumkin
   m_EditorClassIdentifier: 
+  id: PUMKIN
   name: Pumkin
   description: Pumpkins are 90% water. And yes, they can float.
   timeInStage0: 5

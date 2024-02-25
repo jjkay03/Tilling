@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class PlantSO : ScriptableObject {
 
     [Header("Text")]
+    public string id;
     public new string name;
     public string description;
 
@@ -15,12 +16,6 @@ public class PlantSO : ScriptableObject {
     public int timeInStage3;
     public int waterDelay;
     public int sellPrice;
-
-    [Header("Data")]
-    public Vector2Int plantedCoards;
-    public long plantedTime;
-    public long lastWaterTime;
-    public bool isCollectable = false;
 
     [Header("Tiles")]
     public Tile tileStage0;

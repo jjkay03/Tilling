@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantsParent: {fileID: 0}
+  plantObject: {fileID: 6854298619685125976, guid: bf8cbdd6b3597da47bc396ac523d0a52, type: 3}
   PLANT_PUMKIN: {fileID: 11400000, guid: f113c8428c43ddb4ea575c004a883e23, type: 2}
   PLANT_CARROT: {fileID: 11400000, guid: 102bc3ca5ec1d184e9cc5d6c01d6621e, type: 2}
 --- !u!114 &8430115613712618220

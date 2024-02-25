@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c4dd3634255ae4f9b34c8cbb94b3db, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
+  id: CARROT
   name: Carrot
   description: Carrots can be left in the ground over the winter.
   timeInStage0: 5
