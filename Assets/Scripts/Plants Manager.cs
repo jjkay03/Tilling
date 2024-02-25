@@ -23,7 +23,7 @@ public class PlantsManager : MonoBehaviour {
     }
     
     // UPDATE
-    void Update() {
+    void Update() { 
         if (Input.GetKeyDown(KeyCode.Space)) {
             Plant(PLANT_PUMKIN);
         }
@@ -33,29 +33,25 @@ public class PlantsManager : MonoBehaviour {
     public void Plant(PlantSO plantSO) {
         // Check if selected location is plantable
         if (tileSelector.IsCorrectTilemap(tileSelector.dirtTilemap)) {
-            // Create new plant object
-            CreatePlantObject(plantSO);
-           
+            // Create a plant object
+            GameObject newPlant = Instantiate(plantObject, plantsParent.transform);
+
+            // Give name to game object
+            newPlant.name = plantSO.name;
+
+            // Get the PlantObject component attached to the new plant
+            PlantObject newPlantScript = newPlant.GetComponent<PlantObject>();
+            
+            // Edit script variables of plant object
+            if (newPlantScript != null) {
+                newPlantScript.plantSO = plantSO;
+                newPlantScript.plantedCoards = TileSelector.SELECTED_POS;
+                newPlantScript.plantedTime = GameManager.CURRENT_EPOCH_TIMESTAMP;
+                newPlantScript.lastWaterTime = GameManager.CURRENT_EPOCH_TIMESTAMP;
+            }
+            
+            // Place stage 0 plant tile
+            tileSelector.plantsTilemap.SetTile(new Vector3Int(newPlantScript.plantedCoards.x, newPlantScript.plantedCoards.y, 1), plantSO.tileStage0);
         }
-    }
-
-    // Create plant object
-    private void CreatePlantObject(PlantSO plantSO) {
-        // Create a plant object
-        GameObject newPlant = Instantiate(plantObject, plantsParent.transform);
-
-        // Give name to game object
-        newPlant.name = plantSO.name;
-
-        // Get the PlantObject component attached to the new plant
-        PlantObject newPlantScript = newPlant.GetComponent<PlantObject>();
-        
-        // Edit script variables of plant object
-        if (newPlantScript != null) {
-            newPlantScript.plantSO = plantSO;
-            newPlantScript.plantedCoards = TileSelector.SELECTED_POS;
-            newPlantScript.plantedTime = GameManager.CURRENT_EPOCH_TIMESTAMP;
-            newPlantScript.lastWaterTime = GameManager.CURRENT_EPOCH_TIMESTAMP;
-       }
     }
 }
